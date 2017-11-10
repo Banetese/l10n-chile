@@ -6,7 +6,10 @@ import re
 class res_partner(models.Model):
     _inherit = 'res.partner'
 
-    document_number = fields.Char(string='Document Number')
+    document_number = fields.Char(
+        translate=True, 
+        help='Show VAT in custom formatted way',
+        string='Document Number')
     formated_vat = fields.Char(
         translate=True, string='Printable VAT',
         help='Show formatted vat')
